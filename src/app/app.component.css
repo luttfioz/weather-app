@@ -21,6 +21,12 @@
   animation: slidedown 0.5s ease-in-out, fadein 1s ease-in-out;
 }
 
+.mode-toggle__container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
 .toggle-button__container {
   cursor: pointer;
   position: relative;
@@ -28,12 +34,31 @@
   display: inline-flex;
 }
 
-.mode-toggle__container {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
+.mode-toggle__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
+.mode-toggle__bg {
+  height: 1rem;
+  width: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  transition: background-color 300ms linear;
+}
+
+.mode-toggle__circle {
+  height: 1.30rem;
+  width: 1.30rem;
+  background-color: #2B244D;
+  position: absolute;
+  top: -0.18rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(0, 0, 255, 0.5);
+  transition: left 300ms linear;
+  left: 0.2rem;
+}
 
 .mode-toggle__text {
   font-size: 0.75rem;
@@ -42,6 +67,13 @@
 }
 
 /*Content*/
+.left__section {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  max-width: 5rem;
+}
+
 .date__text {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
