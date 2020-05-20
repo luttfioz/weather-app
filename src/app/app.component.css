@@ -8,6 +8,7 @@
   background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
 }
 
+
 /*Header*/
 .main__header {
   background-color: #fff;
@@ -60,6 +61,15 @@
   left: 0.2rem;
 }
 
+.mode-toggle__circle-checked {
+  background-color: white;
+  left: 1.5rem;
+}
+
+.mode-toggle__bg-checked {
+  background-color: #FF0070;
+}
+
 .mode-toggle__text {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -79,6 +89,16 @@
   letter-spacing: 0.1rem;
   display: inline;
   margin: 0.5rem 0;
+}
+
+/*SVGs*/
+.logo__icon {
+  height: 2rem;
+  margin-left: 1rem;
+}
+
+.logo__text {
+  fill: #2B244D;
 }
 
 /*
