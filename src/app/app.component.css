@@ -8,6 +8,10 @@
   background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
 }
 
+.root__container-dark {
+  /*background: linear-gradient(to top, #30cfd0 0%, #330867 100%);*/
+  background: linear-gradient(to bottom, #372865, #000000);
+}
 
 /*Header*/
 .main__header {
@@ -20,6 +24,11 @@
   min-height: 4rem;
   align-items: center;
   animation: slidedown 0.5s ease-in-out, fadein 1s ease-in-out;
+}
+
+.main__header-dark {
+  background-color: #2B244D;
+  color: white;
 }
 
 .mode-toggle__container {
@@ -100,6 +109,11 @@
 .logo__text {
   fill: #2B244D;
 }
+
+.logo__text-dark {
+  fill: #ffff;
+}
+
 
 /*
 ================
