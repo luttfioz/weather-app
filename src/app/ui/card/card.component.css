@@ -1,0 +1,30 @@
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 2rem;
+  margin: 2rem;
+  width: 19rem;
+  height: 30rem;
+  justify-items: center;
+  cursor: pointer;
+  border-radius: 1.75rem;
+  animation: slideup 1s ease-in-out, fadein 1.5s ease-in-out 0ms 1;
+  color: #443282;
+}
+
+.card__title {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.body__container {
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+}
+
