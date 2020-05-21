@@ -15,6 +15,10 @@ export class DataService {
     return this.cities;
   }
 
+  add(city: any) {
+    this.cities.push(new Object(city));
+    this._commit(this.cities);
+  }
 
   _commit(cities: any[]) {
     localStorage.setItem('cities', JSON.stringify(cities));
