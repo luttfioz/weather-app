@@ -9,15 +9,28 @@ import { DataService } from '../../services/data.service';
 
 export class AddCardComponent implements OnInit {
   cities;
+  allCities;
+  cityIndex;
+  city;
 
   constructor(public dataService: DataService) {
   }
 
   ngOnInit() {
     this.cities = this.dataService.getCities();
+    this.dataService.getCitiesAll().subscribe((cities) => {
+      this.allCities = cities;
+      this.suffleCities();
+    });
   }
 
   addCity() {
-    this.dataService.add({ id: 3, name: 'Istanbul' });
+    this.dataService.add({ id: this.cityIndex, name: this.city.capital });
+    this.suffleCities();
+  }
+
+  suffleCities() {
+    this.cityIndex = Math.floor(Math.random() * (this.allCities.length + 1));
+    this.city = this.allCities[this.cityIndex - 1];
   }
 }
