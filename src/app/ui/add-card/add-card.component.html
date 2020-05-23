@@ -1,4 +1,4 @@
-<div class="add__card" (click)="addCity()">
+<div class="add__card" [ngClass]="{'add__card-dark': darkMode}" (click)="addCity()">
   <div class="header__container">
     <span class="card__title">Add city</span>
   </div>

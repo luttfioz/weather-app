@@ -15,6 +15,11 @@
   color: #443282;
 }
 
+.add__card-dark {
+  background: linear-gradient(to bottom, #711B86, #00057A);
+  color: white;
+}
+
 .card__title {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
