@@ -15,6 +15,11 @@
   color: #443282;
 }
 
+.card-dark {
+  background: linear-gradient(to bottom, #711B86, #00057A);
+  color: white;
+}
+
 .card__title {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -26,5 +31,11 @@
   justify-content: space-between;
   align-items: center;
   flex-flow: column;
+}
+
+.remove__icon {
+  position: absolute;
+  margin-left: 19em;
+  margin-top: -3em;
 }
 

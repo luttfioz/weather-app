@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from './../../services/data.service';
+import { CoreService } from './../../services/core.service';
 
 @Component({
   selector: 'app-card',
@@ -7,14 +9,23 @@ import { DataService } from './../../services/data.service';
   styleUrls: ['./card.component.css']
 })
 
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, OnDestroy {
+  darkMode: boolean;
+  sub1: Subscription;
 
   @Input() city;
 
-  constructor(public dataService: DataService) {
+  constructor(public dataService: DataService, public coreService: CoreService) {
   }
 
   ngOnInit() {
+    this.sub1 = this.coreService.darkModeState.subscribe((isDark) => {
+      this.darkMode = isDark;
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub1.unsubscribe();
   }
 
   removeCity() {

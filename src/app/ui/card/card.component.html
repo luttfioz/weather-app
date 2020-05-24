@@ -1,4 +1,25 @@
-<div class="card">
+<div class="card" [ngClass]="{'card-dark': darkMode}">
+
+  <svg (click)="removeCity()" class="remove__icon" preserveAspectRatio="xMidYMid meet" viewBox="0 0 80 80" width="80"
+    height="80">
+    <defs>
+      <path d="M80 40C80 62.08 62.08 80 40 80C17.92 80 0 62.08 0 40C0 17.92 17.92 0 40 0C62.08 0 80 17.92 80 40Z"
+        id="a1zYO4ztTB"></path>
+      <path
+        d="M48.38 40L63.33 24.28L54.96 15.48L40 31.2L25.04 15.48L16.67 24.28L31.62 40L16.67 55.72L25.04 64.52L40 48.8L54.96 64.52L63.33 55.72L48.38 40Z"
+        id="cdIVyDW2Y"></path>
+    </defs>
+    <g>
+      <g>
+        <g>
+          <use xlink:href="#a1zYO4ztTB" opacity="1" fill="#f5f8ff" fill-opacity="1"></use>
+        </g>
+        <g>
+          <use xlink:href="#cdIVyDW2Y" opacity="1" fill="#7effcc" fill-opacity="1"></use>
+        </g>
+      </g>
+    </g>
+  </svg>
   <div class="header__container">
     <span class="card__title">{{city.name}}</span>
   </div>
