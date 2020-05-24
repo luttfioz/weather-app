@@ -10,7 +10,6 @@ import { CoreService } from './../../services/core.service';
 })
 
 export class AddCardComponent implements OnInit, OnDestroy {
-  cities;
   allCities;
   cityIndex;
   city;
@@ -21,7 +20,6 @@ export class AddCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.cities = this.dataService.getCities();
     this.dataService.getCitiesAll().subscribe((cities) => {
       this.allCities = cities;
       this.suffleCities();
