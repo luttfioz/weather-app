@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class CoreService {
   darkModeState: BehaviorSubject<boolean>;
+  citiesState: BehaviorSubject<any[]>;
 
-  constructor() {
+  constructor(public storageService: StorageService) {
+
     this.darkModeState = new BehaviorSubject<boolean>(false);
+    this.citiesState = new BehaviorSubject<any[]>(storageService.getCities());
   }
 
 }
