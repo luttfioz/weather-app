@@ -25,6 +25,10 @@
   letter-spacing: 0.1rem;
 }
 
+.card__image {
+  width: 19em;
+}
+
 .body__container {
   align-self: end;
   display: flex;

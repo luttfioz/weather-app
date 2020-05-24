@@ -12,6 +12,7 @@ import { CoreService } from './../../services/core.service';
 export class CardComponent implements OnInit, OnDestroy {
   darkMode: boolean;
   sub1: Subscription;
+  cityImg;
 
   @Input() city;
 
@@ -22,6 +23,8 @@ export class CardComponent implements OnInit, OnDestroy {
     this.sub1 = this.coreService.darkModeState.subscribe((isDark) => {
       this.darkMode = isDark;
     });
+
+    this.cityImg = this.dataService.getCityImage(this.city.name.toLowerCase());
   }
 
   ngOnDestroy() {
