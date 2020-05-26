@@ -25,7 +25,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.eventBusSubscription.unsubscribe();
+    if (this.eventBusSubscription) {
+      this.eventBusSubscription.unsubscribe();
+    }
   }
 
   modeToggleSwitch() {
