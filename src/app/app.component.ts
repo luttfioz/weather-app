@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CoreService } from './services/core.service';
 import { EventBusService, EmitEvent, Events } from './services/event-bus.service';
 
@@ -7,8 +8,9 @@ import { EventBusService, EmitEvent, Events } from './services/event-bus.service
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   darkModeActive: boolean;
+  eventBusSubscription: Subscription;
 
   constructor(public coreService: CoreService, private eventBusService: EventBusService) {
   }
@@ -17,9 +19,13 @@ export class AppComponent implements OnInit {
     // this.coreService.darkModeState.subscribe((value) => {
     //   this.darkModeActive = value;
     // });
-    this.eventBusService.on(Events.DarkModeSelected, (value) => {
+    this.eventBusSubscription = this.eventBusService.on(Events.DarkModeSelected, (value) => {
       this.darkModeActive = value;
     });
+  }
+
+  ngOnDestroy() {
+    this.eventBusSubscription.unsubscribe();
   }
 
   modeToggleSwitch() {
