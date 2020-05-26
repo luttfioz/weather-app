@@ -25,3 +25,30 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## EventBus Service vs Observable Service
+![Screenshot](./src/assets/tutorial/eventbus-vs-observable-service.png)
+
+## EventBus Service
+![Screenshot](./src/assets/tutorial/event-bus-service.png)
+![Screenshot](./src/assets/tutorial/event-bus-service-pc.png)
+
+## Rxjs Subjects
+
+![Screenshot](./src/assets/tutorial/rxjs-subjects.png)
+
+with `Subject` we send data to subscribed observers, but any previously emitted data is not going to be sent as you subscribed later. You're only going to get the data that occurs after you've subscribed.  
+
+with `BehaviorSubject`, which is one of my favorites, we can send the last piece of data to any new observers, any new subscribers. That way they can still stay in sync. They're not going to have all the previous values, but at least they'd have the latest value.  
+
+with `ReplaySubject` we can replay everything that was previously sent. Now you can control that on how much of the data is sent, but that way any new subscribers can get all of the data that might have gone out to other components if you have that type of scenario.  
+
+with `AsyncSubject`, as mentioned, emits the last value, and only the last value, to subscribers or observers when the sequence of data that's being sent out is actually completed.  
+
+Now the two of these four that I find myself personally using the most are subject and BehaviorSubject. And as mentioned, `BehaviorSubject` really is a type of ReplaySubject.  
+
+
+## Unsubscribe Methods
+![Screenshot](./src/assets/tutorial/unsubscribe-from-observables.png)
+
