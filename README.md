@@ -51,4 +51,3 @@ Now the two of these four that I find myself personally using the most are subje
 
 ## Unsubscribe Methods
 ![Screenshot](./src/assets/tutorial/unsubscribe-from-observables.png)
-
