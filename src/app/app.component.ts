@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoreService } from './services/core.service';
+import { ObservableDataService } from './services/observable-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,16 @@ import { CoreService } from './services/core.service';
 export class AppComponent implements OnInit {
   darkModeActive: boolean;
 
-  constructor(public coreService: CoreService) {
+  constructor(public observableDataService: ObservableDataService) {
   }
 
   ngOnInit(): void {
-    this.coreService.darkModeState.subscribe((value) => {
+    this.observableDataService.darkModeState$.subscribe((value) => {
       this.darkModeActive = value;
     });
   }
 
   modeToggleSwitch() {
-    this.coreService.darkModeState.next(!this.darkModeActive);
+    this.observableDataService.darkModeState$.next(!this.darkModeActive);
   }
 }

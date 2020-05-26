@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { CoreService } from './core.service';
+import { ObservableDataService } from './observable-data.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -10,7 +10,7 @@ export class DataService {
   private readonly baseURL = 'https://restcountries.eu/rest/v2/all';
   private readonly baseImageUrl = 'https://api.teleport.org/api/urban_areas/slug:';
 
-  constructor(public http: HttpClient, public coreService: CoreService) {
+  constructor(public http: HttpClient, public observableDataService: ObservableDataService) {
     // 671ac7a5d543c9935d09d1a2e6ebfb5b
     // this._commit([{ id: 1, name: 'Berlin' }, { id: 2, name: 'London' }]);
     const cities: any[] = JSON.parse(localStorage.getItem('cities')) || [];
@@ -36,16 +36,18 @@ export class DataService {
       );
   }
 
-  add(city: any) {
+  add(city: any): Observable<any> {
     this.cities.push(new Object(city));
     this._commit(this.cities);
-    this.coreService.citiesState.next(this.cities);
+    this.observableDataService.citiesState$.next(this.cities);
+    return of(this.cities);
   }
 
   remove(city: any) {
     this.cities = this.cities.filter(_city => _city.id !== city.id);
     this._commit(this.cities);
-    this.coreService.citiesState.next(this.cities);
+    this.observableDataService.citiesState$.next(this.cities);
+    return of(this.cities);
   }
 
   _commit(cities: any[]) {

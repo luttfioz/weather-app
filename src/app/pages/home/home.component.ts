@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoreService } from './../../services/core.service';
+import { ObservableDataService } from '../../services/observable-data.service';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +10,11 @@ import { CoreService } from './../../services/core.service';
 export class HomeComponent implements OnInit {
   cities;
 
-  constructor(public coreService: CoreService) {
+  constructor(public observableDataService: ObservableDataService) {
   }
 
   ngOnInit() {
-    this.coreService.citiesState.subscribe((value) => {
+    this.observableDataService.citiesState$.subscribe((value) => {
       this.cities = value;
     });
   }
