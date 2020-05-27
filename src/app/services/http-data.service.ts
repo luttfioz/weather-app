@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class HttpDataService {
@@ -29,7 +30,7 @@ export class HttpDataService {
   private handleError(error: Error) {
     const errMessage = error.message;
     console.error(errMessage);
-    throw error;
+    return throwError(errMessage);
   }
 }
 
