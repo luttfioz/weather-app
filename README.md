@@ -1,5 +1,7 @@
 # WeatherApp
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a4695def-7ab2-447c-b72b-d6d2fb0a0384/deploy-status)](https://app.netlify.com/sites/peaceful-villani-b1645e/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
 ## Development server
