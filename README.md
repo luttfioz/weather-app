@@ -1,6 +1,11 @@
 # WeatherApp
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a4695def-7ab2-447c-b72b-d6d2fb0a0384/deploy-status)](https://app.netlify.com/sites/peaceful-villani-b1645e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a4695def-7ab2-447c-b72b-d6d2fb0a0384/deploy-status)](https://app.netlify.com/sites/peaceful-villani-b1645e/deploys)  
+Netlify  
+https://peaceful-villani-b1645e.netlify.app/  
+
+Azure Static Web Application  
+https://wonderful-meadow-0771eba03.azurestaticapps.net/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
