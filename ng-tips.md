@@ -1,4 +1,8 @@
 
+## Serve production
+ng build --prod
+npm i -g serve
+serve dist/material-tic-tac-toe -p 4200 -s
 
 ## Module Provider Ekleme
 <pre><code>
