@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddCardComponent } from './ui/add-card/add-card.component';
 import { CardComponent } from './ui/card/card.component';
+
+export function createWindowObj() {
+  return window;
+}
 
 @NgModule({
   declarations: [
@@ -23,4 +27,13 @@ import { CardComponent } from './ui/card/card.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AppModule,
+      providers: [{
+        provide: 'Window', useFactory: createWindowObj
+      }]
+    };
+  }
+}
