@@ -6,6 +6,8 @@ https://peaceful-villani-b1645e.netlify.app/
 
 Azure Static Web Application  
 https://wonderful-meadow-0771eba03.azurestaticapps.net/
+https://polite-island-070e90d03.azurestaticapps.net/
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
