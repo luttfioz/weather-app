@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddCardComponent } from './ui/add-card/add-card.component';
 import { CardComponent } from './ui/card/card.component';
+import { DenemeComponent } from './pages/deneme/deneme.component';
 
 export function createWindowObj() {
   return window;
@@ -17,7 +18,8 @@ export function createWindowObj() {
     AppComponent,
     HomeComponent,
     AddCardComponent,
-    CardComponent
+    CardComponent,
+    DenemeComponent
   ],
   imports: [
     BrowserModule,
